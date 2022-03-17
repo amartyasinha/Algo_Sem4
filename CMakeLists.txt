@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.21)
-project(Algo_Sem3)
+project(Algo_Sem4)
 
 set(CMAKE_CXX_STANDARD 14)
 
@@ -11,3 +11,7 @@ add_executable(MergeSort MergeSort.cpp)
 add_executable(QuickSort QuickSort.cpp)
 add_executable(DepthFirstSearch DepthFirstSearch.cpp)
 add_executable(BreadthFirstSearch BreadthFirstSearch.cpp)
+add_executable(CountingSort CountingSort.cpp)
+add_executable(RadixSort RadixSort.cpp)
+add_executable(primsSpanningTree primsSpanningTree.cpp)
+add_executable(BucketSort BucketSort.cpp)
