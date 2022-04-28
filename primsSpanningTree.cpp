@@ -177,10 +177,14 @@ public:
     }
 
     void print(int *parent, int *weight) const {
+        int totWeight = 0;
         cout << "The Required Prim's MST for the given Graph is:\n";
         for (int i = 1; i < noOfVertices; i++) {
             cout << i << " ------------- " << parent[i] << " -> " << weight[i] << endl;
+            totWeight += weight[i];
         }
+        cout << "-----------------------------------\n";
+        cout << "Total Cost: " << totWeight;
     }
 };
 
