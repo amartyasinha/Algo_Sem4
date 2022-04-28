@@ -2,6 +2,8 @@
 // Created by amartya on 07/02/22.
 //
 
+
+// submit randomized quick sort
 #include <iostream>
 
 using namespace std;
@@ -46,8 +48,8 @@ public:
 
         for (int j = start; j < end; j++) {
             // swapping when the element in less than the pivot element
+            counter++;
             if (array[j] <= pivEle) {
-                counter++;
                 i++;
                 swap(array[j], array[i]);
             }
@@ -59,12 +61,22 @@ public:
         return (i+1);
     }
 
+    int randPartition(int start, int end) {
+        int pivRand;
+        int n;
+        pivRand = start + n%(end - start +1);
+
+        swap(array[end], array[pivRand]);
+
+        return partition(start, end);
+    }
+
     // quick sort function
     void quickSort(int start, int end) {
         if (start < end) {
             counter++;
             // creating pivot index using the partition function
-            int pivotInd = partition(start, end);
+            int pivotInd = randPartition(start, end);
 
             // recursively calling quickSort function to sort the arrays divided through pivot
             quickSort(start, pivotInd-1);
@@ -85,9 +97,9 @@ public:
 };
 
 int main() {
-    cout << "\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n";
-    cout << "\tTemplate Program to implement Quick Sort Algorithm\n";
-    cout << "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n";
+    cout << "\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n";
+    cout << "\tTemplate Program to implement Randomized Quick Sort Algorithm\n";
+    cout << "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n";
     cout << "1. For Integer\n2. For Character\n3. For Float\nSelect your DataType: ";
     int dataType;
     cin >> dataType;
